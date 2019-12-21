@@ -22,6 +22,7 @@ public class LoginPageTest extends TestBase {
 		return TestUtil.getData("Sheet1");
 	}
 	
+	// Test case for hubspot app
 	@Test(priority=1)
 	public void validLogin() {
 		test = reports.createTest("validLogin");
