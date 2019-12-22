@@ -1,0 +1,3 @@
+com\hubspot\app\qa\pages\LoginPage.class
+com\hubspot\app\qa\base\TestBase.class
+com\hubspot\app\qa\util\TestUtil.class

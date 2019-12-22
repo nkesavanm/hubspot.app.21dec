@@ -1,5 +1,8 @@
 package com.hubspot.app.qa.testcases;
 
+import java.io.IOException;
+
+import org.apache.poi.EncryptedDocumentException;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -18,7 +21,7 @@ public class LoginPageTest extends TestBase {
 	}
 	
 	@DataProvider
-	public Object[][] loginData() {
+	public Object[][] loginData() throws EncryptedDocumentException, IOException {
 		return TestUtil.getData("Sheet1");
 	}
 	

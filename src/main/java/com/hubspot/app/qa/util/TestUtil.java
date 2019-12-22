@@ -64,7 +64,7 @@ public class TestUtil extends TestBase {
 		}
 	}
 	
-	public static Object[][] getData(String sheetName) {
+	public static Object[][] getData(String sheetName) throws EncryptedDocumentException, IOException {
 		FileInputStream fis = null;
 		try {
 			fis = new FileInputStream(TESTDATA_EXCEL_PATH);
@@ -72,11 +72,9 @@ public class TestUtil extends TestBase {
 			e1.printStackTrace();
 		};
 		
-		try {
+		
 			book = WorkbookFactory.create(fis);
-		} catch (EncryptedDocumentException | IOException e) {
-			e.printStackTrace();
-		}
+		
 		sheet = book.getSheet(sheetName);
 		Object[][] data = new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
 		for(int i=0; i<sheet.getLastRowNum(); i++) {
